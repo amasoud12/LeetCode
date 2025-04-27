@@ -1,0 +1,23 @@
+question - https://leetcode.com/problems/thousand-separator/
+
+solution 
+
+class Solution(object):
+    def thousandSeparator(self, n):
+        n = str(n)
+        length = len(n)
+        if length < 4:
+            return n
+        else: 
+            result = []
+            count = 0
+            
+            for i in range(length - 1, -1, -1):
+                result.append(n[i])
+                count += 1
+            
+                if count == 3 and i != 0:
+                    result.append('.')
+                    count = 0
+        
+            return ''.join(result[::-1])
