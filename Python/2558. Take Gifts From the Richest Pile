@@ -1,0 +1,11 @@
+question - https://leetcode.com/problems/take-gifts-from-the-richest-pile/description/?envType=daily-question&envId=2025-04-27
+
+solution 
+
+class Solution(object):
+    def pickGifts(self, gifts, k):
+        while k > 0:
+            index = gifts.index(max(gifts))
+            gifts[index] = int(gifts[index] ** 0.5)
+            k -= 1
+        return sum(gifts)
