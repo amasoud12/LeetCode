@@ -1,0 +1,10 @@
+question - https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/?envType=daily-question&envId=2025-04-27
+
+solution 
+
+class Solution(object):
+    def getFinalState(self, nums, k, multiplier):
+        while k > 0:
+            nums[nums.index(min(nums))] = nums[nums.index(min(nums))] * multiplier
+            k -= 1
+        return nums
