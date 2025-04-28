@@ -1,0 +1,23 @@
+question - https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/submissions/1619792288/
+
+solution 
+
+import random
+
+class Solution(object):
+    def modifyString(self, s):
+        s = list(s)
+
+        for i in range(len(s)):
+            if s[i] == '?':
+                letters = list('abcdefghijklmnopqrstuvwxyz')
+
+                if i > 0 and s[i - 1] in letters:
+                    letters.remove(s[i - 1])
+
+                if i + 1 < len(s) and s[i + 1] in letters:
+                    letters.remove(s[i + 1])
+
+                s[i] = random.choice(letters)
+        return ''.join(s)
+        
