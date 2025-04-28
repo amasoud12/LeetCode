@@ -1,0 +1,16 @@
+question - https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+
+solution 
+
+class Solution(object):
+    def sumOddLengthSubarrays(self, arr):
+        total = 0
+        n = len(arr)
+
+        for start in range(n):
+            for end in range(start, n):
+                if (end - start + 1) % 2 != 0:
+                    subArr = arr[start : end + 1]
+                    total += sum (subArr)
+            
+        return total       
