@@ -1,0 +1,19 @@
+question - https://leetcode.com/problems/rearrange-spaces-between-words/
+
+solution 
+
+class Solution(object):
+    def reorderSpaces(self, text):
+        spacesCount = text.count(' ')
+        text = text.split()
+
+        if len(text) > 1:
+            spacesPerWord = spacesCount // (len(text) - 1)
+            remainingSpaces = spacesCount % (len(text) - 1)
+        
+        else:
+            spacesPerWord = 0
+            remainingSpaces = spacesCount
+
+        return (' ' * spacesPerWord).join(text) + ' ' * remainingSpaces
+        
