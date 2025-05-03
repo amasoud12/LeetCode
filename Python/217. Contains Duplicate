@@ -4,9 +4,9 @@ solution
 
 class Solution(object):
     def containsDuplicate(self, nums):
-        nums2 =  list(set(nums))
+        nums2 =  set(nums)
 
-        if nums == nums2:
+        if len(nums) == len(nums2):
             return False
         
         return True
