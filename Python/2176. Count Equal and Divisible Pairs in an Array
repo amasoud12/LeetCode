@@ -1,0 +1,16 @@
+question - https://leetcode.com/problems/count-equal-and-divisible-pairs-in-an-array/?envType=daily-question&envId=2025-05-04
+
+solution 
+
+class Solution(object):
+    def countPairs(self, nums, k):
+        length = len(nums)
+        total = 0
+        
+        for i in range(length):
+            for j in range(i + 1, length):
+                if nums[i] == nums[j] and (i * j) % k == 0:
+                    total += 1
+            
+        return total
+        
