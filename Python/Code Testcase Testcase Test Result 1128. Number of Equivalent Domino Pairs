@@ -1,0 +1,15 @@
+question - https://leetcode.com/problems/number-of-equivalent-domino-pairs/?envType=daily-question&envId=2025-05-04
+
+solution 
+
+class Solution(object):
+    def numEquivDominoPairs(self, dominoes):
+        lst = []
+        total = 0 
+
+        for domino in dominoes:
+            d = sorted(domino)
+            total += lst.count(d)
+            lst.append(d)
+            
+        return total
