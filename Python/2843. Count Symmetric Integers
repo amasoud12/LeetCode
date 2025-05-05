@@ -1,0 +1,30 @@
+question - https://leetcode.com/problems/count-symmetric-integers/?envType=daily-question&envId=2025-05-04
+
+solution
+
+class Solution(object):
+    def countSymmetricIntegers(self, low, high):
+        count = 0 
+
+        for num in range(low, high + 1):
+            num = str(num)
+            length = len(num)
+            leftSum = 0
+            rightSum = 0
+
+            if length % 2 == 0:
+                midPoint = length // 2
+            
+                left = num[:midPoint]
+                right = num[midPoint:]
+
+                for LN in left:
+                    leftSum += int(LN)
+
+                for RN in right:
+                    rightSum += int(RN)
+
+                if leftSum == rightSum:
+                    count += 1
+
+        return count
